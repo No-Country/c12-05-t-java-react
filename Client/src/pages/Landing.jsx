@@ -6,7 +6,7 @@ import logo from '../assets/img/logo.png'
 const landing = () => {
   return (
     <section className='bg-gray-500' >
-      <div className='flex max-w-[1440px] h-screen bg-[#353535] m-auto'>
+      <div className='flex max-w-screen h-screen bg-[#353535] m-auto'>
         <div className='relative w-[52.5rem] h-full'>
             <div className='absolute top-60 left-48 w-[24rem] h-[22rem]' >
               <h1 className='text-[#FFFFFF] text-[40px] font-medium leading-normal pr-4 shadow-md ' >
