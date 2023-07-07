@@ -1,17 +1,12 @@
-
-import './App.css'
+import Landing from "./pages/Landing";
+import { Menu } from "./pages/Menu";
 
 function App() {
-
-
   return (
     <>
-      <div>
-        <h1 className='text-3xl font-bold underline'>Hola Como están</h1>  
-      </div>
-      
+      <Landing />
     </>
-  )
+  );
 }
 
-export default App
+export default App;
