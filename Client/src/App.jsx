@@ -1,15 +1,12 @@
+import Landing from './pages/Landing'
 
-import './App.css'
 
 function App() {
 
 
   return (
     <>
-      <div>
-        <h1 className='text-3xl font-bold underline'>Hola Como están</h1>  
-      </div>
-      
+      <Landing />
     </>
   )
 }
