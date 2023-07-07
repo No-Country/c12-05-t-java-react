@@ -4,7 +4,11 @@ export default {
   "./src/**/*.{js,jsx}",
   ], // path to your files that contain the classes you want to purge from unused styles in production mode
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        sans: ["Noto Sans", "sans-serif"]
+      }
+    },
   },
   plugins: [],
 }
