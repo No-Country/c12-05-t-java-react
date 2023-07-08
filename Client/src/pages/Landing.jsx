@@ -2,6 +2,9 @@ import React from 'react'
 
 import ImgLanding from '../assets/img/ImgLanding.png'
 import logo from '../assets/img/logo.png'
+import twitter from '../assets/img/twitter.png'
+import { FaSquareFacebook } from "react-icons/fa6";
+
 
 const landing = () => {
   return (
@@ -26,6 +29,17 @@ const landing = () => {
               <button className='bg-[#B89754] hover:bg-[#826326] transition-all text-white text-xl font-medium p-4 px-14 rounded-md shadow-sm shadow-black m-auto mt-32'>
                 Ingresar
               </button>
+            </div>
+
+            <div className='w-40 h-30 m-auto mt-80' >
+              <p className='text-white text-center text-sm' >Contactanos en:</p>
+              <div className='flex items-center justify-center mt-2' >
+                <img className='h-[30px] ' src={twitter} alt="twitter" />
+                <FaSquareFacebook className='text-blue-500 text-[35px] ml-2' />
+              </div>
+
+              <p className='text-xs text-center text-white mt-4' > &copy; All rights reserved 2023 </p>
+
             </div>
 
           </div>
