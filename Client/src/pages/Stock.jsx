@@ -1,6 +1,6 @@
 import React from "react";
 
-export const Menu = () => {
+export const Stock = () => {
   return (
     <div className="w-screen h-screen overflow-y-scroll relative bg-neutral-200">
       <div className="w-[620px] h-[60px] left-[80px] top-[120px] absolute">
