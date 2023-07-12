@@ -11,7 +11,7 @@ export const Navbar = () => {
         <div className="w-1/4 flex justify-center items-center gap-5">
           <img
             className="rounded-full"
-            src="../../logoHammer.png"
+            src="../../public/logoHammer.png"
             height="30px"
             width="30px"
           />
@@ -20,20 +20,20 @@ export const Navbar = () => {
           </spam>
         </div>
         <div className="w-2/6 flex gap-2 p-2">
-          <ul className="flex w-full justify-end gap-5 mr-2">
-            <li className="hover:text-gray-500 transition-all ease-in-out duration-300">
+          <ul className="flex w-full justify-around">
+            <li>
               <Link to="/users" className="flex gap-2">
                 <IoMdContacts className="text-2xl" />
                 <span className="">usuarios</span>
               </Link>
             </li>
-            <li className="hover:text-gray-500 transition-all ease-in-out duration-300">
+            <li>
               <Link to="/dashboard" className="flex gap-2">
                 <PiListChecksBold className="text-2xl" />
                 <span className="">inventario</span>
               </Link>
             </li>
-            <li className="hover:text-gray-500 transition-all ease-in-out duration-300">
+            <li>
               <Link to="/profile">
                 <IoMdContact className="text-2xl" />
               </Link>
