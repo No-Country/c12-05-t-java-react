@@ -11,7 +11,7 @@ export const Navbar = () => {
         <div className="w-1/4 flex justify-center items-center gap-5">
           <img
             className="rounded-full"
-            src="../../logoHammer.png"
+            src="../../public/logoHammer.png"
             height="30px"
             width="30px"
           />
