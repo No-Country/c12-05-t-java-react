@@ -1,6 +1,7 @@
 import React from "react";
 import { Navbar } from "../components/dashboard/Navbar";
 import SearchBar from "../components/dashboard/SearchBar";
+import { Stock } from "../components/dashboard/Stock";
 
 export const Dashboard = () => {
   return (
@@ -8,7 +9,7 @@ export const Dashboard = () => {
       <Navbar />
       <SearchBar />
       <div className="border-2 border-gray-400 row-span-2"></div>
-      <div className="border-2 border-gray-400 col-span-3"></div>
+      <Stock />
     </div>
   );
 };
