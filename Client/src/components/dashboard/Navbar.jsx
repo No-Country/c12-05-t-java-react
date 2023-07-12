@@ -1,8 +1,10 @@
+import React from "react";
+import { Link } from "react-router-dom";
 import { IoMdContact } from "react-icons/io";
 import { IoMdContacts } from "react-icons/io";
 import { PiListChecksBold } from "react-icons/pi";
 
-export const Navbar = ({ setScreen }) => {
+export const Navbar = () => {
   return (
     <div className="col-span-4 border-2 border-gray-400">
       <div className="flex justify-between h-full items-center">
@@ -13,28 +15,28 @@ export const Navbar = ({ setScreen }) => {
             height="30px"
             width="30px"
           />
-          <div className="text-2xl font-saira">
+          <spam className="text-2xl font-saira">
             <h1>STOCK WISE</h1>
-          </div>
+          </spam>
         </div>
         <div className="w-2/6 flex gap-2 p-2">
-          <ul className="flex w-full justify-end items-center gap-5 mr-2">
-            <li className="hover:text-gray-500 transition-all ease-in-out duration-300">
-              <button className="flex gap-2" onClick={() => setScreen("users")}>
+          <ul className="flex w-full justify-around">
+            <li>
+              <Link to="/users" className="flex gap-2">
                 <IoMdContacts className="text-2xl" />
-                <h1 className="">usuarios</h1>
-              </button>
+                <span className="">usuarios</span>
+              </Link>
             </li>
-            <li className="hover:text-gray-500 transition-all ease-in-out duration-300">
-              <button className="flex gap-2" onClick={() => setScreen("stock")}>
+            <li>
+              <Link to="/dashboard" className="flex gap-2">
                 <PiListChecksBold className="text-2xl" />
-                <h2 className="">inventario</h2>
-              </button>
+                <span className="">inventario</span>
+              </Link>
             </li>
-            <li className="hover:text-gray-500 transition-all ease-in-out duration-300">
-              <button onClick={() => setScreen("profile")}>
-                <IoMdContact className="text-5xl" />
-              </button>
+            <li>
+              <Link to="/profile">
+                <IoMdContact className="text-2xl" />
+              </Link>
             </li>
           </ul>
         </div>
