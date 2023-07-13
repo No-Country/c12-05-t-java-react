@@ -1,16 +1,27 @@
-import ImgLanding from '../assets/img/ImgLanding.png'
+import { useEffect } from 'react';
 import { useAuth0 } from "@auth0/auth0-react";
 import Logout from "./Logout"
 import Profile from "./Profile"
 import logo from '../assets/img/logo.png'
-
+import ImgLanding from '../assets/img/ImgLanding.png'
 
 const Landing = () => {
-  const  { loginWithPopup } = useAuth0();
+  const  { loginWithPopup, user } = useAuth0();
 
-  const handleLogin = () => {
-    loginWithPopup();
+  const handleLogin = async () => {
+    await loginWithPopup();
   };
+
+  useEffect(() => {
+    try {
+      if (user) {
+        window.location.href = "/home";
+      }
+    } catch (error) {
+      console.log(error);
+    }
+
+  }, [user]);
 
   return (
     <section className='bg-gray-500' >
