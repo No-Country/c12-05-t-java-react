@@ -1,14 +1,15 @@
 
 import { Route, Routes } from 'react-router'
 import Landing from './pages/Landing'
-import Login from './pages/Login'
-
+import { Home }from './pages/Home'
+import { Dashboard } from './pages/Dashboard';
 
 function App() {
   return (
     <Routes>
       <Route path= '/' element={<Landing />} />
-      <Route path='/login' element={<Login />} />
+      <Route path='/home' element={<Home />} />
+      <Route path='/Dashboard' element={<Dashboard/>} />
     </Routes>  
     
   )
