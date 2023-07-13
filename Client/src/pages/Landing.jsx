@@ -6,10 +6,10 @@ import logo from '../assets/img/logo.png'
 
 
 const Landing = () => {
-  const  { loginWithRedirect } = useAuth0();
+  const  { loginWithPopup } = useAuth0();
 
   const handleLogin = () => {
-    loginWithRedirect();
+    loginWithPopup();
   };
 
   return (
