@@ -1,5 +1,5 @@
 import LogoutButton from './Logout'
-import Profile  from './Profile'
+import { Profile } from './Profile'
 
 export const Home = () => {
   return (
