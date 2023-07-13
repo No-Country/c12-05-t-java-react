@@ -26,10 +26,10 @@ const Landing = () => {
 
 
 const Landing = () => {
-  const  { loginWithRedirect } = useAuth0();
+  const  { loginWithPopup } = useAuth0();
 
   const handleLogin = () => {
-    loginWithRedirect();
+    loginWithPopup();
   };
 
   return (
