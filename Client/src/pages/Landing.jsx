@@ -1,4 +1,4 @@
-import ImgLanding from '../assets/img/ImgLanding.png'
+import { useEffect } from 'react';
 import { useAuth0 } from "@auth0/auth0-react";
 import Logout from "./Logout"
 import Profile from "./Profile"
@@ -16,21 +16,12 @@ const Landing = () => {
     try {
       if (user) {
         window.location.href = "/home";
-        console.log("Exito")
       }
     } catch (error) {
       console.log(error);
     }
 
   }, [user]);
-
-
-const Landing = () => {
-  const  { loginWithPopup } = useAuth0();
-
-  const handleLogin = () => {
-    loginWithPopup();
-  };
 
   return (
     <section className='bg-gray-500' >
