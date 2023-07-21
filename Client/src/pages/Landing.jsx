@@ -1,10 +1,12 @@
 import { useEffect } from 'react';
 import { useAuth0 } from "@auth0/auth0-react";
+import { useNavigate } from 'react-router-dom';
 import logo from '../assets/img/logo.png'
 import ImgLanding from '../assets/img/ImgLanding.png'
 
 const Landing = () => {
   const  { loginWithPopup, user } = useAuth0();
+  const navigate = useNavigate();
 
   const handleLogin = async () => {
     await loginWithPopup();
@@ -13,7 +15,7 @@ const Landing = () => {
   useEffect(() => {
     try {
       if (user) {
-        window.location.href = "/home";
+        navigate('/dashboard')
         console.log("Exito")
       }
     } catch (error) {
@@ -43,7 +45,6 @@ const Landing = () => {
               <button className='bg-[#B89754] hover:bg-[#826326] transition-all text-white text-xl font-medium p-4 px-14 rounded-md shadow-sm shadow-black m-auto mt-32' onClick={handleLogin}>
                 Ingresar
               </button>
-
             </div>
           </div> 
       </div>
