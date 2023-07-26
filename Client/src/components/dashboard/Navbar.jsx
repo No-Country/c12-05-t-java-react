@@ -2,7 +2,7 @@ import { IoMdContact } from "react-icons/io";
 import { IoMdContacts } from "react-icons/io";
 import { PiListChecksBold } from "react-icons/pi";
 
-export const Navbar = ({ setScreen }) => {
+const Navbar = () => {
   return (
     <div className="col-span-4 border-2 border-gray-400">
       <div className="flex justify-between h-full items-center">
@@ -20,19 +20,19 @@ export const Navbar = ({ setScreen }) => {
         <div className="w-2/6 flex gap-2 p-2">
           <ul className="flex w-full justify-end items-center gap-5 mr-2">
             <li className="hover:text-gray-500 transition-all ease-in-out duration-300">
-              <button className="flex gap-2" onClick={() => setScreen("users")}>
+              <button className="flex gap-2">
                 <IoMdContacts className="text-2xl" />
                 <h1 className="">usuarios</h1>
               </button>
             </li>
             <li className="hover:text-gray-500 transition-all ease-in-out duration-300">
-              <button className="flex gap-2" onClick={() => setScreen("stock")}>
+              <button className="flex gap-2">
                 <PiListChecksBold className="text-2xl" />
                 <h2 className="">inventario</h2>
               </button>
             </li>
             <li className="hover:text-gray-500 transition-all ease-in-out duration-300">
-              <button onClick={() => setScreen("profile")}>
+              <button>
                 <IoMdContact className="text-5xl" />
               </button>
             </li>
@@ -42,3 +42,5 @@ export const Navbar = ({ setScreen }) => {
     </div>
   );
 };
+
+export default Navbar;
