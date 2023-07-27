@@ -8,10 +8,14 @@ import EditItem from "../components/inventory/forms/Edit";
 import ViewDetails from "../components/inventory/forms/ViewDetails";
 import { CREATE, EDIT, VIEW } from "../utils/constants";
 import ModalDelete from "../components/utils/modals/Delete";
+import { getAllItems } from "../services/getItems";
+import { createItem } from "../services/createItem";
+import { removeItem } from "../services/removeItem";
+import { updateItem } from "../services/updateItem";
 
 const Inventory = () => {
+  const [items, setItems] = React.useState([]);
   const [selected, setSelected] = React.useState("");
-  console.log("🚀 ~ file: Inventory.jsx:14 ~ Inventory ~ selected:", selected)
   const [remove, setRemove] = React.useState(false);
   const [open, setOpen] = React.useState(false);
   const [action, setAction] = React.useState({
@@ -19,13 +23,15 @@ const Inventory = () => {
     modalType: "",
   });
 
+  const [searchText, setSearchText] = React.useState("");
+
   const handleRenderView = () => {
     switch (action.modalType) {
       case CREATE:
-        return <CreateItem />;
+        return <CreateItem handleCreate={handleCreate} />;
       case EDIT:
         return (
-          <EditItem item={action.item} />
+          <EditItem item={action.item} handleEdit={handleEdit} />
         );
       case VIEW:
         return (
@@ -65,12 +71,65 @@ const Inventory = () => {
     setRemove(!remove);
   };
 
+  const handleCreate = async (item) => {
+    try {
+      await createItem({
+        ...item
+      })
+      setOpen(false)
+    } catch(err) {
+      console.log("Error: ", err)
+    }
+  }
+
+  const handleRemove = async () => {
+    try {
+      await removeItem(selected)
+      setRemove(false)
+    } catch(err) {
+      console.log("Error: ", err)
+    }
+  }
+
+  const handleEdit = async (item) => {
+    try {
+      await updateItem({
+        ...item
+      })
+      setOpen(false)
+    } catch(err) {
+      console.log("Error: ", err)
+    }
+  }
+
+  React.useEffect(() => {
+    getAllItems()
+    .then((res) => {
+      setItems(res);
+    })
+    .catch((err) => {
+      console.log(err);
+    });
+  }, [open, remove])
+
+
+  const handleSearch = (e) => {
+    setSearchText(e.target.value);
+  };
+
+  const filteredSearch = React.useMemo(() => {
+    return items.filter((item) =>
+      item?.title.toLowerCase().includes(searchText?.toLowerCase())
+    );
+  }, [items, searchText]);
+
+
 
   return (
     <>
       <div className="grid grid-cols-4 grid-rows-[0.2fr,0.3fr,2fr] gap-1 min-h-screen border-2 border-gray-400 bg-neutral-200">
         <Navbar />
-        <SearchBar handleCreateVisible={handleCreateVisible} />
+        <SearchBar handleCreateVisible={handleCreateVisible} handleSearch={handleSearch} />
         <div className="border-2 border-gray-400 row-span-2">
           <div className="flex justify-end items-end h-full">
             <img
@@ -81,6 +140,7 @@ const Inventory = () => {
           </div>
         </div>
         <Stock
+          items={filteredSearch}
           handleEditVisible={handleEditVisible}
           handleViewVisible={handleViewVisible}
           handleRemoveVisible={handleRemoveVisible}
@@ -107,7 +167,7 @@ const Inventory = () => {
         description="¿Está seguro que desea eliminar este item?"
         visible={remove}
         handleVisible={() => setRemove(!remove)}
-        handleDelete={() => console.log("delete")}
+        handleDelete={handleRemove}
       />
     </>
   );
