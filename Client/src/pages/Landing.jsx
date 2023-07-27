@@ -14,7 +14,7 @@ const Landing = () => {
   useEffect(() => {
     try {
       if (user) {
-        navigate('/dashboard')
+        navigate('/inventory')
         console.log("Exito")
       }
     } catch (error) {

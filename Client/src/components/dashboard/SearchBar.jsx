@@ -1,7 +1,7 @@
 import { AiOutlineSearch, AiOutlinePlus } from "react-icons/ai";
 import PropTypes from 'prop-types';
 
-const SearchBar = ({ handleCreateVisible }) => {
+const SearchBar = ({ handleCreateVisible, handleSearch }) => {
   return (
     <div className="col col-span-3 border-2 border-gray-400">
       <div className="flex w-full h-full items-center px-6 gap-5">
@@ -10,6 +10,7 @@ const SearchBar = ({ handleCreateVisible }) => {
             type="text"
             className="px-4 h-10 bg-transparent"
             placeholder="Search..."
+            onChange={(e) => handleSearch(e)}
           />
           <button className="px-4 bg-transparent">
             <AiOutlineSearch className=" text-gray-600 text-2xl hover:text-gray-400 transition-all duration-300 ease-in-out cursor-pointer" />
@@ -25,6 +26,7 @@ const SearchBar = ({ handleCreateVisible }) => {
 
 SearchBar.propTypes = {
   handleCreateVisible: PropTypes.func.isRequired,
+  handleSearch: PropTypes.func.isRequired,
 }
 
 export default SearchBar;

@@ -1,38 +1,14 @@
-import { useState } from "react";
 import PropTypes from "prop-types";
 import { AiFillEdit, AiFillEye } from "react-icons/ai";
 import { FiTrash } from "react-icons/fi";
-
-const data = [
-  {
-    id: 1,
-    code: "XNSDJ1046M",
-    name: "Kit Taladro",
-    description: "Taladro Rotomartillo Percutor Inalambrico 1/2 2*2.0ah 69pz",
-    quantity: 13,
-  },
-  {
-    id: 2,
-    code: "XNSDJ1046M",
-    name: "Kit Taladro",
-    description: "Taladro Rotomartillo Percutor Inalambrico 1/2 2*2.0ah 69pz",
-    quantity: 8,
-  },
-  {
-    id: 3,
-    code: "XNSDJ1046M",
-    name: "Kit Taladro",
-    description: "Taladro Rotomartillo Percutor Inalambrico 1/2 2*2.0ah 69pz",
-    quantity: 2,
-  },
-];
 
 const Stock = ({
   handleRemoveVisible,
   handleEditVisible,
   handleViewVisible,
+  items
 }) => {
-  const [products, setProducts] = useState(data);
+  // const [products, setProducts] = useState(data);
 
   return (
     <div className="border-2 border-gray-400 col-span-3">
@@ -41,9 +17,9 @@ const Stock = ({
           <table className="w-full text-xs text-left dark:text-gray-400">
             <thead className="text-xs uppercase bg-transparent dark:text-gray-400">
               <tr className="text-neutral-900">
-                <th scope="col" className="px-6 py-3">
+                {/* <th scope="col" className="px-6 py-3">
                   codigo
-                </th>
+                </th> */}
                 <th scope="col" className="px-6 py-3">
                   nombre
                 </th>
@@ -54,27 +30,33 @@ const Stock = ({
                   cantidad
                 </th>
                 <th scope="col" className="px-6 py-3">
+                  precio
+                </th>
+                <th scope="col" className="px-6 py-3">
                   <span className="sr-only">Edit</span>
                 </th>
               </tr>
             </thead>
             <tbody>
-              {products.map((product) => (
+              {items.map((product) => (
                 <tr
                   key={product.id}
                   className="bg-transparent border-2 border-neutral-300 text-neutral-900 hover:bg-neutral-300 "
                 >
-                  <td scope="row" className="px-6 py-4">
+                  {/* <td scope="row" className="px-6 py-4">
                     {product.code}
-                  </td>
+                  </td> */}
                   <td scope="row" className="px-6 py-4 ">
-                    {product.name}
+                    {product.title}
                   </td>
                   <td scope="row" className="px-6 py-4">
                     {product.description}
                   </td>
                   <td scope="row" className="px-6 py-4 text-center">
                     {product.quantity}
+                  </td>
+                  <td scope="row" className="px-6 py-4 text-center">
+                    $ {product.price}
                   </td>
                   <td scope="row" className="px-6 py-4 flex gap-2">
                     <button
@@ -91,7 +73,7 @@ const Stock = ({
                     </button>
                     <button
                       className="font-medium hover:text-neutral-500"
-                      onClick={() => handleRemoveVisible(product)}
+                      onClick={() => handleRemoveVisible(product.id)}
                     >
                       <FiTrash size={24} />
                     </button>
@@ -110,6 +92,7 @@ Stock.propTypes = {
   handleRemoveVisible: PropTypes.func.isRequired,
   handleEditVisible: PropTypes.func.isRequired,
   handleViewVisible: PropTypes.func.isRequired,
+  items: PropTypes.array.isRequired,
 };
 
 export default Stock;
