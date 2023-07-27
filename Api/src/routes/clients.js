@@ -87,11 +87,11 @@ router.delete('/:id', async(req, res, next) => {
     try{
         console.log("entro al delete")
         //let idOrden= parseInt(req.params.id);
-        let resultDelete = await Orden.destroy({where:{id : req.params.id}})
+        let resultDelete = await Client.destroy({where:{id : req.params.id}})
         if(!resultDelete){
-            return res.status(404).send('No existe la orden con el ID especifico')
+            return res.status(404).send('No existe el cliente con el ID especifico')
         }else{
-            return  res.status(201).send(`La orden ${req.params.id} ha sido eliminada`)
+            return  res.status(201).send(`El cliente ${req.params.id} ha sido eliminada`)
         };
     }catch(err){
         next(err)
