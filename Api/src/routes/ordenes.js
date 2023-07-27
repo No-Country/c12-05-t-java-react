@@ -69,7 +69,9 @@ router.post('/', async (req, res, next) => {
         
         let orderWithClient = await Orden.findOne({
             where: { status: status},
-      
+            attributes: {
+                exclude: ['updatedAt', 'createdAt'],
+            },
             include: [
                     { model: Client },
                     { model: Item }
