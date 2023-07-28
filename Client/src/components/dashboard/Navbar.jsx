@@ -19,22 +19,22 @@ const Navbar = () => {
         </div>
         <div className="w-2/6 flex gap-2 p-2">
           <ul className="flex w-full justify-end items-center gap-5 mr-2">
-            <li className="hover:text-gray-500 transition-all ease-in-out duration-300">
-              <button className="flex gap-2">
+            {/* <li className="hover:text-gray-500 transition-all ease-in-out duration-300">
+              <a href="/users" className="flex gap-2">
                 <IoMdContacts className="text-2xl" />
                 <h1 className="">usuarios</h1>
-              </button>
-            </li>
+              </a>
+            </li> */}
             <li className="hover:text-gray-500 transition-all ease-in-out duration-300">
-              <button className="flex gap-2">
+              <a href="/inventory" className="flex gap-2">
                 <PiListChecksBold className="text-2xl" />
                 <h2 className="">inventario</h2>
-              </button>
+              </a>
             </li>
             <li className="hover:text-gray-500 transition-all ease-in-out duration-300">
-              <button>
+              <a href="/profile">
                 <IoMdContact className="text-5xl" />
-              </button>
+              </a>
             </li>
           </ul>
         </div>
