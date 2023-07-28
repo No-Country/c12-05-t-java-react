@@ -9,7 +9,8 @@ const Profile = () => {
     return <div> Loading... </div>;
   }
   return (
-    isAuthenticated && (
+    // isAuthenticated && 
+    (
       <div className="grid grid-cols-4 grid-rows-[0.2fr,0.3fr,2fr] gap-1 min-h-screen border-2 border-gray-400 bg-neutral-200">
         <Navbar />
         <div className="border rounded p-4 border-gray-400 col-span-3 row-span-2">
@@ -18,13 +19,13 @@ const Profile = () => {
               <div className="w-full">
                 <img
                   className="bg-cover bg-center w-full rounded-t-md"
-                  src={user.picture}
-                  alt={user.name}
+                  src={user?.picture ?? "https://via.placeholder.com/150"}
+                  alt={user?.name ?? "John Doe"}
                 />
               </div>
               <div className="flex flex-col gap-4 p-6">
-                <h2>{user.name}</h2>
-                <p> Email: {user.email}</p>
+                <h2>{user?.name}</h2>
+                <p> Email: {user?.email ?? "email@email.com"}</p>
               </div>
             </div>
             <div className="">
