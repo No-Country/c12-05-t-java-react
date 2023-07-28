@@ -13,8 +13,8 @@ const Profile = () => {
     (
       <div className="grid grid-cols-4 grid-rows-[0.2fr,0.3fr,2fr] gap-1 min-h-screen border-2 border-gray-400 bg-neutral-200">
         <Navbar />
-        <div className="border rounded p-4 border-gray-400 col-span-3 row-span-2">
-          <div className="flex h-full flex-col items-center justify-center gap-4">
+        <div className="rounded p-4 col-span-3 row-span-2">
+          <div className="flex h-full flex-col items-center justify-center gap-20 ml-[320px]">
             <div className="flex flex-col items-center justify-center rounded-lg bg-transparent shadow-2xl w-3/12">
               <div className="w-full">
                 <img
@@ -33,7 +33,7 @@ const Profile = () => {
             </div>
           </div>
         </div>
-        <div className="border-2 border-gray-400 row-span-2">
+        <div className="row-span-2">
           <div className="flex justify-end items-end h-full">
             <img
               className="h-4/6 w-4/6"

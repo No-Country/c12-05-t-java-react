@@ -11,7 +11,7 @@ const Stock = ({
   // const [products, setProducts] = useState(data);
 
   return (
-    <div className="border-2 border-gray-400 col-span-3">
+    <div className="col-span-3">
       <div className="flex justify-center py-8">
         <div className="relative overflow-auto shadow-md sm:rounded-lg w-5/6">
           <table className="w-full text-xs text-left dark:text-gray-400">

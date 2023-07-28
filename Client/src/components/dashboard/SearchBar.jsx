@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 const SearchBar = ({ handleCreateVisible, handleSearch }) => {
   return (
-    <div className="col col-span-3 border-2 border-gray-400">
+    <div className="col col-span-3">
       <div className="flex w-full h-full items-center justify-center gap-5">
         <div className="flex justify-between border-2 border-gray-400 rounded-md w-3/6 h-3/6">
           <input

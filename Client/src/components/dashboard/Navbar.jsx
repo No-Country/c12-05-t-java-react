@@ -4,7 +4,7 @@ import { PiListChecksBold } from "react-icons/pi";
 
 const Navbar = () => {
   return (
-    <div className="col-span-4 border-2 border-gray-400">
+    <div className="col-span-4">
       <div className="flex justify-between h-full items-center">
         <div className="w-1/4 flex justify-center items-center gap-5">
           <img

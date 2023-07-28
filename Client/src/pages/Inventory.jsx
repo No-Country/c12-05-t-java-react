@@ -127,10 +127,10 @@ const Inventory = () => {
 
   return (
     <>
-      <div className="grid grid-cols-4 grid-rows-[0.2fr,0.3fr,2fr] gap-1 min-h-screen border-2 border-gray-400 bg-neutral-200">
+      <div className="grid grid-cols-4 grid-rows-[0.2fr,0.3fr,2fr] gap-1 min-h-screen bg-neutral-200">
         <Navbar />
         <SearchBar handleCreateVisible={handleCreateVisible} handleSearch={handleSearch} />
-        <div className="border-2 border-gray-400 row-span-2">
+        <div className=" row-span-2">
           <div className="flex justify-end items-end h-full">
             <img
               className="h-4/6 w-4/6"
